@@ -21,12 +21,10 @@ const burger =(props) =>{
     //////////////////////////////
 
     const names= Object.keys(props.ingredients);
-    console.log(names);
     const amt=[];
     for(let i=0;i<names.length;i++){
         amt[i]= props.ingredients[names[i]];
     }
-    console.log(amt);
     let finalArr= [];
     for(let j=0;j<amt.length;j++){
         for(let k=1;k<=amt[j];k++){
@@ -34,7 +32,6 @@ const burger =(props) =>{
         }
     }
 
-    console.log(finalArr);
     
     let transformedIngredients= finalArr.map((item, index) => {
         return <BurgerIngredient key={index} type={item} />

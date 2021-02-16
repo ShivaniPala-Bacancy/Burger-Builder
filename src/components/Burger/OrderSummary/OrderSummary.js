@@ -3,9 +3,7 @@ import Auxiliary from '../../../hoc/Auxiliary'
 import Button from '../../UI/Button/Button'
 import {Link} from 'react-router-dom';
 class OrderSummary extends Component{
-    componentWillUpdate(){
-        console.log("order summary updated")
-    }
+    
     render() {
         const queryParams= [];
         for(let i in this.props.ingredients){
@@ -33,7 +31,7 @@ class OrderSummary extends Component{
         <Link 
         to={{
             pathname: "/checkout",
-            search:  '?' + queryString
+            // search:  '?' + queryString
         }}>
             <Button btnType="Danger" >CONTINUE</Button></Link>
     </Auxiliary>

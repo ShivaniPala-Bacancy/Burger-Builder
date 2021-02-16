@@ -22,8 +22,6 @@ const input =(props) =>{
             break;
         case('select'):
             inputElement=(
-
-
                 <select 
                     className={inputClasses.join(' ')} 
                     value={props.value} onChange={props.changed}>

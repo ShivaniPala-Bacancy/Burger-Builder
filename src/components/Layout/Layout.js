@@ -22,9 +22,9 @@ class Layout extends Component{
         <Toolbar showSideDrawer={this.showSideDrawerHandler}/> 
         {/* this.state.showSideDrawer ? <SideDrawer/> : null */}
         <SideDrawer open={this.state.showSideDrawer} showSideDrawerHandler={this.showSideDrawerHandler}/> 
-        <main className={styles.Content}>
-            {this.props.children}
-        </main>
+            <main className={styles.Content}>
+                {this.props.children}
+            </main>
     </Auxiliary>
     }
 }

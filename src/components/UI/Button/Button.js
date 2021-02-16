@@ -6,10 +6,8 @@ const button =(props) =>{
     classes.push(styles.Button);
     classes.push(styles[props.btnType]);
     if(props.disabled){
-        console.log("btn is abled baby");
         // classes=[];
         classes.push(styles.Disabled);
-        console.log(classes)
     }
     return (
         <button
