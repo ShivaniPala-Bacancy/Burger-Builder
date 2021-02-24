@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Order.module.css'
-import Spinner from '../UI/spinner/spinner'
 const Order =(props)=>{
     const ingredients =[];
     for(let ingredient in props.ingredients){

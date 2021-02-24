@@ -10,7 +10,6 @@ class OrderSummary extends Component{
             queryParams.push(encodeURIComponent(i) + "=" + encodeURIComponent(this.props.ingredients[i]))
         }
         queryParams.push("total=" + this.props.sum.toFixed(2));
-        const queryString = queryParams.join('&');
        const ingredientSummary = Object.keys(this.props.ingredients)
     .map(igKey => {
         return <li key={igKey}>
@@ -31,7 +30,6 @@ class OrderSummary extends Component{
         <Link 
         to={{
             pathname: "/checkout",
-            // search:  '?' + queryString
         }}>
             <Button btnType="Danger" >CONTINUE</Button></Link>
     </Auxiliary>

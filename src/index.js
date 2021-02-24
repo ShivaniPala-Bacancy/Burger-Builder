@@ -9,12 +9,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 import thunk from 'redux-thunk';
+import authReducer from './store/reducers/auth'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   order: orderReducer,
   burgerBuilder: burgerBuilderReducer,
+  auth: authReducer
 })
 
 const store= createStore(rootReducer, composeEnhancers(
