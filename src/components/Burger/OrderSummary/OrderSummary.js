@@ -2,18 +2,18 @@ import React, { Component} from 'react';
 import Auxiliary from '../../../hoc/Auxiliary'
 import Button from '../../UI/Button/Button'
 import {Link} from 'react-router-dom';
-class OrderSummary extends Component{
+const  OrderSummary = props => {
     
-    render() {
+    
         const queryParams= [];
-        for(let i in this.props.ingredients){
-            queryParams.push(encodeURIComponent(i) + "=" + encodeURIComponent(this.props.ingredients[i]))
+        for(let i in props.ingredients){
+            queryParams.push(encodeURIComponent(i) + "=" + encodeURIComponent(props.ingredients[i]))
         }
-        queryParams.push("total=" + this.props.sum.toFixed(2));
-       const ingredientSummary = Object.keys(this.props.ingredients)
+        queryParams.push("total=" + props.sum.toFixed(2));
+       const ingredientSummary = Object.keys(props.ingredients)
     .map(igKey => {
         return <li key={igKey}>
-                    <span style={{textTransform: 'capitalize'}}>{igKey}</span> : {this.props.ingredients[igKey]}
+                    <span style={{textTransform: 'capitalize'}}>{igKey}</span> : {props.ingredients[igKey]}
                 </li>
     });
         return (
@@ -24,9 +24,9 @@ class OrderSummary extends Component{
         <ul>
             {ingredientSummary}
         </ul>
-        <p><strong>Total Price: {this.props.sum.toFixed(2)}</strong></p>
+        <p><strong>Total Price: {props.sum.toFixed(2)}</strong></p>
         <p>Continue to checkout?</p>
-        <Button btnType="Success" clicked={this.props.purchaseCancelled}>CANCEL</Button>
+        <Button btnType="Success" clicked={props.purchaseCancelled}>CANCEL</Button>
         <Link 
         to={{
             pathname: "/checkout",
@@ -35,7 +35,6 @@ class OrderSummary extends Component{
     </Auxiliary>
 
     )
-    }
 }
 
 export default OrderSummary;
